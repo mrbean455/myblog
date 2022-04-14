@@ -1,0 +1,204 @@
+@keyframes animate {
+    0%{
+        color:#000;
+    }
+    30%{
+        color:#fff
+    }
+    70%{
+        color: #fff;
+    }
+    100%{
+        color: #000;
+    }
+}
+@keyframes visitorRotate {
+    
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+@keyframes visitorIconRotate {
+    
+    0%{
+        transform: rotate(360deg);
+    }
+    // 100%{
+    //     transform: rotate(-360deg);
+    // }
+
+}
+
+.login-bg{
+    background-image: url('../../images/login/login-bg-cyberpunk.png');
+    background-size: 100% 100%;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slogen{
+        position: absolute;
+        font-size: 300px;
+        z-index: 1;
+        color: #000;
+        filter: blur(2px);
+        animation: animate 6s infinite;
+        span{
+            text-shadow: 0 0 20px rgb(60, 239, 243);
+        }
+    }
+    .login-slider{
+        padding: 8px;
+        z-index: 2022;
+        height: 480px;
+        width: 330px;
+        background-image: linear-gradient(to right, rgb(20, 39, 91) , rgb(36, 93, 177));
+        position:absolute;
+        transform:translateX(45%);
+        transition-duration:0.5s;
+        border-radius: 6px;
+        .user-login-header{
+            text-align: center;
+            width: 100%;
+            .user-login-header-span{
+                color:rgb(251, 251, 251) !important;
+                font-size:30px !important;
+                font-weight: 600;
+            }
+        }
+        
+        img{
+            border-radius: 6px;
+            border: 3px solid rgba(20, 77, 209, 0.874);
+            height: 60%;
+            width: 100%;
+        }
+        .changeLogin{
+            position: relative;
+            top:10%;
+            height: 12%;
+            background-color: transparent;
+            background-size: 100% 99%;
+            text-align: center;
+        }
+        // .changeLogin :hover{
+        //     background-color: gray;
+        // }
+    }
+    .login-border{
+        z-index: 2021;
+        height: 400px;
+        width: 660px;
+        padding: 5px;
+        border-radius: 5px;
+
+        background: linear-gradient(to top, rgb(243, 65, 65) 10%, rgb(34, 104, 165) 20%, rgb(252, 252, 23) 60%, rgb(84, 179, 84) 70%); 
+        display: flex;
+        text-align: center;
+        align-items: center; 
+        .login{
+            background-color: #446490c2;
+            border-radius: 5px;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            .user-login{ 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius :16px;
+                text-align: center;
+                height: 100%;
+                width: 50%;
+            .user-login-form{
+                width: 80%;
+                margin: 5px;
+                padding: 5px;
+                .ant-input  {
+                    background-color: transparent;
+                    border: 0px;
+                    border-radius: none !important;
+                    border-bottom: 2px solid rgb(61, 170, 234);
+                    color: #fff;
+                }
+                .ant-input:focus{
+                    box-shadow: 0 0 0 2px rgb(2 21 39 / 20%);
+                    border-bottom: none;
+                }
+                .ant-input-password{
+                    background-color: transparent;
+                    border: 0px;
+                    border-radius: none !important;
+                    border-bottom: 2px solid rgb(61, 170, 234);
+                    .ant-input{
+                        border-bottom: none;
+                    }
+                }
+                .ant-input-affix-wrapper-focused{
+                    box-shadow: 0 0 0 2px rgb(2 21 39 / 20%);
+                    border-bottom: none;
+                }
+                .ant-btn{
+                        font-weight: 600;
+                        width: 90px;
+                       background-color: rgb(62, 75, 115);
+                       color: rgb(182, 176, 176);
+                       border: none;
+                   }
+                .ant-btn:hover{
+                    color: #fff;
+                    font-weight: 600;
+                    background-color: rgb(86, 179, 229);
+                }
+
+            }
+            .ant-layout-header{
+                padding: 0;
+                }
+            .ant-layout-footer{
+                background:transparent;
+            }
+            }
+            .visitor-login{
+                text-align: center;
+                height: 100%;
+                width: 50%;
+                padding: 20px;
+            }
+            .vistor-link{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                background-image: url('../../images/login/visitor-icon.JPG');
+                background-size: 98% 97%;
+                margin: 0 auto;
+                margin-top: 30px;
+                border-radius: 50%;
+                cursor: pointer;
+
+            }
+            .vistor-link:hover{
+                    box-shadow: 0px 3px 15px rgb(37, 181, 234);
+                    animation: visitorRotate 5s infinite linear;
+                    .visitor-icon{
+                        border-radius: 50%;
+                        height: 80%;
+                        width: 80%;
+                        background-image: url('../../images/login/cyberpunk-vistor-btn.jpg');
+                        background-size: 100% 100%;
+                        animation: visitorIconRotate 5s infinite linear;
+                    }
+            }
+        }
+    }
+
+}
