@@ -1,12 +1,11 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, Fragment} from 'react'
 import "./login.less";
-import {Form, Input, Button,Layout}from 'antd'
-import sliderImage1 from '../../images/login/login-sliderimage1.png'
-import  visitorButton from "../../images/login/cyberpunk-vistor-btn.jpg"
+import {Form, Input, Button}from 'antd'
+import sliderImage1 from '../../assets/images/login/login-sliderimage1.png'
+import Threearrows from '../icon/threearrows/threearrows';
+import { LeftOutlined,RightOutlined } from '@ant-design/icons';
 
 export default function Login() {
-  //引入antdLayout中的Header,Footer,Content
-  // const {Header,Footer,Content} =Layout;
   //获取ref的方法
   const sliderRef = React.useRef(null)
   //state
@@ -23,10 +22,10 @@ export default function Login() {
     let sliderStyle = sliderRef.current.style;
     if(visitor){
       sliderStyle.transform="translateX(45%)";
-      sliderStyle.backgroundImage="linear-gradient(to right, rgb(20, 39, 91) , rgb(36, 93, 177))";
+      sliderStyle.backgroundImage="linear-gradient(to right, rgb(48, 66, 113) 16%, #2d65b9 75%)";
     }else{
       sliderStyle.transform="translateX(-45%)";
-      sliderStyle.backgroundImage="linear-gradient(to left, rgb(20, 39, 91) , rgb(36, 93, 177))";
+      sliderStyle.backgroundImage="linear-gradient(to left, rgb(48, 66, 113) 16%, #2d65b9 75%)";
     }
     setVisitor(!visitor);
 
@@ -34,23 +33,21 @@ export default function Login() {
   return (
     <div className='login-bg'>
     <div className='slogen'>
-      <span>W</span>
-      <span>E</span>
-      <span>L</span>
-      <span>C</span>
-      <span>O</span>
-      <span>M</span>
-      <span>E</span>
-      <span>!</span>
+      <span>WELCOME!</span>
     </div>
     <div className='login-slider' ref={sliderRef}>
-    <div className='user-login-header'>
-        <span className='user-login-header-span' >{visitor?'VISITOR':'USER'}</span>
+    <div className='user-login-header user-login-header-name'>
+      {visitor?
+      <span className='user-login-header-name'>VISI<span className='user-login-header-name-off'>T</span>OR</span>:
+      <span className='user-login-header-name'>US<span className='user-login-header-name-off'>E</span>R</span>}
+        <span className='user-login-header-welcome'>welcome</span>
+        <span className='user-login-header-login'>LOGIN</span>
     </div>
-      <img src={sliderImage1} >
-      </img>
       <div className='changeLogin'>
-      {visitor?<span style={{color:'#fff'}}>已有账号？<a onClick={()=>{changeLogin()}}>使用账号登录</a></span>:<span>没有账号？<a onClick={()=>{changeLogin()}}>尝试换种方式</a></span>}
+      {visitor?
+      <span style={{color:'#fff'}}>已有账号？<a onClick={()=>{changeLogin()}}>账号登录</a></span>
+      :
+      <span style={{color:'#fff'}}>没有账号？<a onClick={()=>{changeLogin()}}>换种方式</a></span>}
       </div>
     </div>
     <div className='login-border'>
@@ -88,13 +85,19 @@ export default function Login() {
     </div>
       <div className='visitor-login'>
           <div className="visitor-note">
-          <span>本站提供了游客访问的方法，让您无需账号也可访问本站内容。如需访问请点击下方按钮</span>
+          <span>以游客方式访问</span>
+          <br></br>
+          <span>请点击下方按钮</span>
           </div>
-        <div className='vistor-link'>
+          <div className='visitor-btn'>
+            <Threearrows type="right"></Threearrows>
+            <div className='visitor-link'>
           <div className='visitor-icon'>
           </div>
-          {/* <img src={ visitorButton} alt="" /> */}
         </div>
+            <Threearrows type="left"></Threearrows>
+          </div>
+
       </div>
       </div>
     </div>

@@ -1,0 +1,60 @@
+@keyframes shine{
+    0%{
+        color:rgb(155, 225, 249);
+    }
+    30%{
+        color:transparent
+    }
+    70%{
+        color: transparent;
+    }
+    100%{
+        color: rgb(155, 225, 249);
+    }
+}
+.leftarrow{
+    margin-left: 2px;
+    .ant-space{
+        gap:0px !important;
+    .ant-space-item:nth-child(1){
+        animation-delay: 2s;
+    }
+    .ant-space-item:nth-child(2){
+        animation-delay: 1s;
+    }
+    .ant-space-item:nth-child(3){
+        animation-delay: 0.25s;
+    }
+    .ant-space-item{
+        margin-right: -10px;
+        color: rgb(22, 71, 87);
+        font-size: 36px;
+        animation: shine 3s infinite;
+    }
+    }
+
+
+}
+.rightarrow{
+    margin-right: 2px;
+    .ant-space{
+        gap:0px !important;
+    .ant-space-item:nth-child(1){
+        animation-delay: 0.25s;
+    }
+    .ant-space-item:nth-child(2){
+        animation-delay: 1s;
+    }
+    .ant-space-item:nth-child(3){
+        animation-delay: 2s;
+    }
+    .ant-space-item{
+        margin-left: -10px;
+        color: rgb(22, 71, 87);
+        font-size: 36px;
+        animation: shine 3s infinite;
+    }
+    }
+
+
+}
