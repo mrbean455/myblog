@@ -1,13 +1,13 @@
 import React,{useState,useEffect, Fragment} from 'react'
 import "./login.less";
 import {Form, Input, Button}from 'antd'
-import sliderImage1 from '../../assets/images/login/login-sliderimage1.png'
 import Threearrows from '../icon/threearrows/threearrows';
-import { LeftOutlined,RightOutlined } from '@ant-design/icons';
-
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
   //获取ref的方法
   const sliderRef = React.useRef(null)
+  //用于实现编程式导航的方法
+  const navigate = useNavigate();
   //state
   const [visitor,setVisitor] =React.useState(false)
   //function
@@ -27,8 +27,15 @@ export default function Login() {
       sliderStyle.transform="translateX(-45%)";
       sliderStyle.backgroundImage="linear-gradient(to left, rgb(48, 66, 113) 16%, #2d65b9 75%)";
     }
+    console.log(document.body.clientHeight )
     setVisitor(!visitor);
 
+  }
+  const loginByVisitor = ()=>{
+    console.log('以访客方式登录');
+    //1.发请求
+    //2.跳转
+    navigate('/mainpage/index')
   }
   return (
     <div className='login-bg'>
@@ -91,7 +98,7 @@ export default function Login() {
           </div>
           <div className='visitor-btn'>
             <Threearrows type="right"></Threearrows>
-            <div className='visitor-link'>
+            <div className='visitor-link' onClick={()=>{loginByVisitor()}}>
           <div className='visitor-icon'>
           </div>
         </div>

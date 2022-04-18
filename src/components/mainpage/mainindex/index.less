@@ -1,0 +1,38 @@
+.maincontent {
+    width: 100%;
+
+    .introduce {
+        width: 100%;
+        height: 320px;
+        background-image: url("../../../assets/images/mainpage/introduce.png");
+        background-size: 100%;
+        // background-position: 2% 2%;x,y轴偏移参数值
+        text-align: center;
+
+        span {
+            font-size: 26px;
+            color: rgb(233, 233, 233);
+        }
+    }
+
+    .typeform{
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        .typeintroduce{
+            height: 600px;
+            width: 660px;
+            margin: 5px;
+            background-color: pink;
+            .typeintroduce-name{
+                background-color: rgba(0, 0, 0, 0.377);
+                width: 100%;
+                font-size: 36px;
+            }
+        }
+        .typeintroduce:hover{
+            box-shadow: 3px 4px 10px rgba(167, 167, 168, 0.845);
+        }
+
+    }
+}
