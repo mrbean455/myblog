@@ -2,7 +2,7 @@ import React from 'react';
 import './mainpage.less';
 import {Link,Outlet,useNavigate} from 'react-router-dom';
 import visitorIcon from "../../assets/images/login/visitor-icon.JPG"
-import {Popover} from "antd";
+import {Popover,Button} from "antd";
 
 export default function Mainpage() {
   
@@ -11,6 +11,7 @@ export default function Mainpage() {
   const userinfo = ()=>{
     return (
       <div className='userinfo'>
+        <span>范大炮</span>
       </div>
     )
   }
@@ -55,6 +56,15 @@ export default function Mainpage() {
       <div style={{paddingTop:"52px",width:"100%"}}>
         <Outlet></Outlet>
       </div>
+      <div className='aboutme'>
+      <span style={{fontSize:'22px'}}>关于我</span>
+      <br></br>
+      <span>只是一个喜欢代码并且喜欢倒腾花里胡哨的INFJ人格程序员</span>
+      <br></br>
+      <span>Github:<a href='https://github.com/mrbean455' target={'_blank'}>https://github.com/mrbean455</a></span>
+      <br></br>
+      <span>otherBlog:<a href='https://juejin.cn/user/2630507106147517' target={'_blank'}>https://juejin.cn/user/2630507106147517</a></span>
+    </div>
     </div>
   )
 }

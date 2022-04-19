@@ -1,3 +1,23 @@
+@keyframes typename-ani {
+    25%{
+        background-color: rgba(60, 55, 55, 0.615);
+        font-size: 32px;
+        width: 16%
+    }
+    100%{
+        background-color: rgba(60, 55, 55, 0.615);
+        font-size: 34px;
+        width: 100%;
+    }
+}
+@keyframes typeintroduce-ani {
+    0%{
+       height: 0;
+    }
+    100%{
+        height: 10%;
+    }
+}
 .maincontent {
     width: 100%;
 
@@ -19,20 +39,50 @@
         display: flex;
         flex-wrap:wrap;
         justify-content: center;
-        .typeintroduce{
+        .typepicture{
+            position: relative;
             height: 600px;
             width: 660px;
             margin: 5px;
-            background-color: pink;
-            .typeintroduce-name{
-                background-color: rgba(0, 0, 0, 0.377);
+            // background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: 50% 70%;
+            cursor: pointer;
+        .typename{
+            width:10%;
+            // background-color: rgba(60, 55, 55, 0.615);
+            border-radius: 0 6px 6px 0;
+            position: absolute;
+            font-size: 32px;
+            color: aliceblue;
+        }
+        .typeintroduce{
+            position:absolute;
+            bottom: 0;
+            font-size: 28px;
+            background-color: rgba(240, 248, 255, 0.649);
+            color: black;
+            display: none;
+            width: 100%;
+
+        }
+        }
+        .typepicture:hover{
+            box-shadow: 3px 4px 10px rgba(167, 167, 168, 0.845);
+            .typename{
+                // background-color: rgba(0, 0, 0, 0.377);
                 width: 100%;
                 font-size: 36px;
+                animation: typename-ani 0.5s 1;
+                animation-fill-mode:forwards;
             }
-        }
-        .typeintroduce:hover{
-            box-shadow: 3px 4px 10px rgba(167, 167, 168, 0.845);
+            .typeintroduce{
+                display: inline;
+                animation: typeintroduce-ani 0.5s 1;
+                animation-fill-mode:forwards;
+            }
         }
 
     }
+
 }

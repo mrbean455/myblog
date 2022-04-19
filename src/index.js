@@ -3,6 +3,7 @@ import React from 'react';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import '@testing-library/jest-dom';
 //在react18中，不再使用render函数,改用createRoot,不改也行但是报错恶心
 import {createRoot} from "react-dom/client";
 
