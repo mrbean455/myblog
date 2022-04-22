@@ -6,6 +6,8 @@ import Artcle from "../components/mainpage/artcle";
 import Picture from "../components/mainpage/picture"
 import Video from "../components/mainpage/video";
 import Mainindex from "../components/mainpage/mainindex";
+import Albums from "../components/mainpage/picture/ablums"
+import Album from "../components/mainpage/picture/ablum";
 //路由表
 export default [
     {
@@ -26,7 +28,19 @@ export default [
             },
             {
                 path:'picture',
-                element:<Picture></Picture>
+                element:<Picture></Picture>,
+                children:[
+                    {   
+                        //index是设为默认路由
+                        index:true,
+                        // path:'albums',
+                        element:<Albums></Albums>
+                    },
+                    {
+                        path:'album',
+                        element:<Album></Album>
+                    }
+                ]
             },
             {
                 path:'video',
