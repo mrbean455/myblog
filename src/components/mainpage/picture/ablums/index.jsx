@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import "./index.less"
 import { Popover, Space } from 'antd'
 import { EllipsisOutlined,PictureOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
-export default function Picture() {
+export default function Ablums() {
+  const navigate = useNavigate()
   const albums = [{name:'风景',data:'2022-04-20',fmimg:'assets/images/mainpage/image/fengjing.jpg',introduce:"无",id:'001',num:10},
   {name:'人物',data:'2022-04-20',fmimg:'assets/images/mainpage/image/renwu.jpg',introduce:"无",id:'002',num:10},
   {name:'截图',data:'2022-04-20',fmimg:'assets/images/mainpage/image/jietu.jpg',introduce:"无",id:'003',num:10},
@@ -14,6 +16,10 @@ export default function Picture() {
         删除
       </div>
     )
+  }
+  //跳转到相册详情
+  const goToDetail = (id)=>{
+    navigate(`album/${id}`);
   }
 
   //用于获取Div平移时候的平移值
@@ -94,7 +100,7 @@ export default function Picture() {
                   <div className={`left-${index} album-left`}>
                   <div className='albumpicture'>
                     <span className='albumpicturename'>{item.name}</span>
-                    <img src={require(`../../../../${item.fmimg}`)} height="100%" width="100%">
+                    <img src={require(`../../../../${item.fmimg}`)} height="100%" width="100%" onClick={()=>{goToDetail(item.id)}}> 
                     </img>
                     <div className='albumpicturenum'>
                       <Space>

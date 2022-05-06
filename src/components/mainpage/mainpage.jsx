@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './mainpage.less';
 import {Link,Outlet,useNavigate} from 'react-router-dom';
 import visitorIcon from "../../assets/images/login/visitor-icon.JPG"
@@ -23,6 +23,12 @@ export default function Mainpage() {
   const backtoindex=()=>{
     navigate('./index')
   }
+  useEffect(()=>{
+    //让其每次跳转完滚轮都回到顶部
+    console.log('执行了')
+    window.scrollTo(0,0)
+  })
+
   return (
     <div style={{minHeight:'720px'}}>
       <div className='header'>

@@ -37,7 +37,7 @@ export default [
                         element:<Albums></Albums>
                     },
                     {
-                        path:'album',
+                        path:'album/:id',
                         element:<Album></Album>
                     }
                 ]
