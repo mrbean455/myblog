@@ -102,6 +102,7 @@ export default function Ablums() {
                     <span className='albumpicturename'>{item.name}</span>
                     <img src={require(`../../../../${item.fmimg}`)} height="100%" width="100%" onClick={()=>{goToDetail(item.id)}}> 
                     </img>
+                    
                     <div className='albumpicturenum'>
                       <Space>
                         <PictureOutlined></PictureOutlined>
