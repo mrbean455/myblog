@@ -1,5 +1,4 @@
 import React,{useEffect,useState}from 'react'
-import test from "../../../assets/video/test.mp4";
 import VideoComp from '../../Videocomp/videoComp'; 
 import './index.less';
 //引入react-redux的connect
@@ -27,7 +26,9 @@ const dispatchToProps = (dispatch)=>{
   const [videoList,setVideoList] =React.useState([]);
   let showVideodetail = {url:'',options:{},config:{},};
   useEffect(()=>{
-      let testList=[{id:"1",url:''},{id:"2",url:''},{id:"3",url:''}];
+      let testList=[{id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'},
+      {id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'},
+      {id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'}];
       if(videoList.length==0){
         setVideoList(testList)
         console.log('222222')
@@ -53,7 +54,9 @@ const openVideoComp = (id)=>{
         // console.log(videoList,'11111')
         videoList.map((item)=>{
           return(
-            <div key={item.id} className='videoDetail' onClick={()=>{openVideoComp('test')}}></div>
+            <div key={item.id} className='videoDetail' onClick={()=>{openVideoComp('test')}}>
+              <img src={require(`../../../${item.img}`)} alt="" className='videoImg'></img>
+            </div>
           )
 
         })
