@@ -2,7 +2,7 @@ import React,{useEffect}from "react"
 import './index.less'
 
 export default function PageHeader(props){
-    const {img,tilte} =props;
+    const {img,title} =props;
     const pictureHeaderRef = React.useRef();
       //添加滚轮事件监听
     const headerEffct = () => {
@@ -28,7 +28,7 @@ export default function PageHeader(props){
 
 return(
     <div className='pictureheader' ref={pictureHeaderRef} style={{backgroundImage:`url(${require(`../../${img}`)})`}}>
-    <span>{tilte}</span>
+    <span>{title}</span>
     </div>
 )
 }

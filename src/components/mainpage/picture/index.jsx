@@ -6,7 +6,7 @@ import PageHeader from "../../pageHeader/index.jsx"
 export default function Picture() {
   return (
     <div style={{ height: '100%' }}>
-      <PageHeader tilte={"PICTURE"} img={'assets/images/mainpage/image/picture-header.jpg'}></PageHeader>
+      <PageHeader title={"PICTURE"} img={'assets/images/mainpage/image/picture-header.jpg'}></PageHeader>
       <Outlet></Outlet>
     </div>
   )

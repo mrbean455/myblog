@@ -3,6 +3,7 @@ import VideoComp from '../../Videocomp/videoComp';
 import './index.less';
 //引入react-redux的connect
 import {connect} from 'react-redux';
+import  PageHeader  from '../../pageHeader/index';
 
 //当决定要在组件中使用react-redux时，默认暴露就要发生变化，是默认暴露connect
 const stateToProps = (state)=>{
@@ -27,8 +28,8 @@ const dispatchToProps = (dispatch)=>{
   let showVideodetail = {url:'',options:{},config:{},};
   useEffect(()=>{
       let testList=[{id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'},
-      {id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'},
-      {id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'}];
+      {id:"4",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"5",url:'',img:''},{id:"6",url:'',img:'assets/video/test.jpg'},
+      {id:"7",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"8",url:'',img:''},{id:"9",url:'',img:'assets/video/test.jpg'}];
       if(videoList.length==0){
         setVideoList(testList)
         console.log('222222')
@@ -49,6 +50,8 @@ const openVideoComp = (id)=>{
 }
 
   return (
+    <div style={{ height: '100%' }}>
+    <PageHeader title={"VIDEO"} img={"assets/images/mainpage/image/video-header.jpg"}></PageHeader>
     <div className='videoList'>
       { 
         // console.log(videoList,'11111')
@@ -65,6 +68,8 @@ const openVideoComp = (id)=>{
         videoFlag?<VideoComp url={videoInfo.url}></VideoComp>:''
       }
     </div>
+    </div>
+
   )
 }
 
