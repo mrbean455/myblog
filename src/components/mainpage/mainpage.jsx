@@ -16,7 +16,7 @@ export default function Mainpage() {
     )
   }
   const menuType =[
-                  {type:'artcle',name:'博文'},
+                  {type:'article',name:'博文'},
                   {type:'picture',name:'图片'},
                   {type:'video',name:'视频'},
                   {type:'other',name:'其他'}];
