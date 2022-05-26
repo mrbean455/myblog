@@ -24,7 +24,9 @@ export default function Index(props) {
                     <div key={item.id}  className='articleInfo' onClick={()=>{toArticleDetail(item.id)}}>
                         <span className='articleTitle'>{item.title}</span>
                         <span className='articleIntroduce'>{item.introduce}</span>
-                        <span className='articleTime'>{item.time}</span>
+                        <div className='articleBottom'>
+                            <span>{item.time}</span>   
+                        </div>
                     </div>
                 )
             })
