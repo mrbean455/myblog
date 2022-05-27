@@ -43,15 +43,11 @@ export default function Ablums() {
   }
   let scrollYpre = window.scrollY ;
   const ablumScroll =()=>{
+
   const scrollYnext = window.scrollY;
   let album = document.getElementsByClassName('album');
   let albumArr = Array.from(album);
-  console.log(scrollYpre,'pre')
-  console.log(scrollYnext,'next')
-  console.log(album,'left')
   albumArr.forEach((album,index)=>{
-    console.log(album.offsetTop-scrollYnext,index)
-    console.log(scrollYnext - scrollYpre,'-')
     if(scrollYnext - scrollYpre>0&&(scrollYnext!=0&&scrollYpre!=0)){
       //>0时为向下滑，同时scrollYnext!=0&&scrollYpre!=0是为了预防刷新后向上移动滚轮造成div右滑现象
       if(album.offsetTop-scrollYnext<630){
@@ -60,7 +56,6 @@ export default function Ablums() {
           if(getTranslateX(left)>(-170.0)){
             let getLeftX = getTranslateX(left);
             let getRightX = getTranslateX(right);
-            console.log('111111111')
             left.style.transform = `translateX(${getLeftX-10}px)`;
             right.style.transform = `translateX(${getRightX+5}px)`;
           }
@@ -74,7 +69,6 @@ export default function Ablums() {
         if(getTranslateX(left)<(-0.1)){
           let getLeftX = getTranslateX(left);
           let getRightX = getTranslateX(right);
-          console.log('222222222')
           left.style.transform = `translateX(${getLeftX+10}px)`;
           right.style.transform = `translateX(${getRightX-5}px)`;
         }

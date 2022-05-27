@@ -1,3 +1,11 @@
+@keyframes showInfo {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .albumHeader{
     font-size: 26px;
     padding: 10px;
@@ -6,8 +14,28 @@
 .pictureshow{
     width: 84%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     .ant-image{
         margin: 4px;
+    }
+    .picture{
+        width:fit-content;
+    }
+    .pictureInfo{
+        font-size: 18px;
+        color: rgb(231, 231, 231);
+        position: absolute;
+        z-index: 90;
+        margin-left: 5px;
+        opacity: 0;
+    }
+    .picture:hover{
+        .pictureInfo{
+            animation: showInfo 0.5s 1;
+            animation-fill-mode: forwards;
+        }
     }
 }
 .ant-image-preview-mask{

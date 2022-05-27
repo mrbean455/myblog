@@ -2,7 +2,8 @@ import React,{useEffect} from 'react';
 import './mainpage.less';
 import {Link,Outlet,useNavigate} from 'react-router-dom';
 import visitorIcon from "../../assets/images/login/visitor-icon.JPG"
-import {Popover,Button} from "antd";
+import {Popover,Space} from "antd";
+import { UpCircleOutlined  } from '@ant-design/icons';
 
 export default function Mainpage() {
   
@@ -22,13 +23,19 @@ export default function Mainpage() {
                   {type:'other',name:'其他'}];
   const backtoindex=()=>{
     navigate('./index')
+
   }
   useEffect(()=>{
     //让其每次跳转完滚轮都回到顶部
-    console.log('执行了')
     window.scrollTo(0,0)
+    console.log('....zhixingle')
+    return ()=>{
+      console.log(886)
+    }
   })
-
+  const backToTop =()=>{
+    window.scrollTo(0,0);
+  }
   return (
     <div style={{minHeight:'720px'}}>
       <div className='header'>
@@ -62,6 +69,11 @@ export default function Mainpage() {
       <div style={{paddingTop:"52px",width:"100%"}}>
         <Outlet></Outlet>
       </div>
+    <div className='ToTop'>
+    <Space>
+    <UpCircleOutlined onClick={()=>{backToTop()}} />
+    </Space> 
+    </div>
       <div className='aboutme'>
       <span style={{fontSize:'22px'}}>关于我</span>
       <br></br>

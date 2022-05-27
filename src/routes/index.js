@@ -8,7 +8,7 @@ import ArticleDetail from "../components/mainpage/article/articleDetail";
 import Picture from "../components/mainpage/picture"
 import Video from "../components/mainpage/video";
 import Mainindex from "../components/mainpage/mainindex";
-import Albums from "../components/mainpage/picture/ablums"
+import Albums from "../components/mainpage/picture/ablums/index1.jsx"
 import Album from "../components/mainpage/picture/ablum";
 //路由表
 export default [

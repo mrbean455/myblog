@@ -28,7 +28,6 @@
     border:2px solid rgba(82, 82, 82, 0.474);
     border-radius: 8px;
     padding: 10px;
-    cursor: pointer;
 .articleTitle{
     display: block;
     margin-left:10px;
@@ -38,6 +37,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow:ellipsis;
+    cursor: pointer;
 }
 .articleIntroduce{
     width: 100%;
@@ -50,13 +50,16 @@
     display: -webkit-box;
     -webkit-line-clamp: 5;//第五行的时候显示省略号
     -webkit-box-orient: vertical;
-
+    cursor: pointer;
 }
 .articleBottom{
     position: absolute;
     font-size: 18px;
     bottom: 2px;
     left:5px;
+    span{
+        margin: 5px;
+    }
 }
 }
 .articleInfo:hover{

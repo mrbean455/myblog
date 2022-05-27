@@ -1,0 +1,59 @@
+
+.albums{
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .album{
+        width: 500px;
+        position: relative;
+        .albumpicture{
+            position: absolute;
+            height: 100%;
+            width: 500px;
+            cursor: pointer;
+            transform: perspective(500px) rotateY(0deg);
+            backface-visibility: hidden;
+            transition: transform 0.5s linear;
+            .albumpicturename{
+                position: absolute;
+                z-index: 91;
+                font-size: 26px;
+                color: rgb(211, 211, 211);
+                background-color: rgba(0, 0, 0, 0.437);
+            }
+            img{
+                position: absolute;
+                z-index: 90;
+            }
+            .albumpicturenum{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 91; 
+                font-size: 18px;
+                color: rgb(211, 211, 211);
+                background-color: rgba(0, 0, 0, 0.437);
+            }
+        
+    }
+    }
+    .ablumbackface{
+        position: absolute;
+        width: 500px;
+        height: 100%;
+        // z-index: 95;
+        background: rgba(255, 192, 203, 0.49);
+        transition: transform 0.5s linear;
+        backface-visibility: hidden;
+        transform: perspective(500px) rotateY(180deg);
+    }
+    .album:hover .albumpicture{
+        transform: perspective(500px) rotateY(-180deg);
+    }
+    .album:hover .ablumbackface{
+        transform: perspective(500px) rotateY(0deg);
+    }
+}
