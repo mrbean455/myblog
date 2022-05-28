@@ -19,7 +19,7 @@ export default function leftarrow(props) {
         return arr;
     }
   return (
-    <div className={type=="left"?'leftarrow':'rightarrow'}>
+    <div className={type=="left"?'leftArrow':'rightArrow'}>
         <Space>
         {produceEl()}
         </Space>

@@ -51,7 +51,7 @@ const openVideoComp = (id)=>{
 
   return (
     <div style={{ height: '100%' }}>
-    <PageHeader title={"VIDEO"} img={"assets/images/mainpage/image/video-header.jpg"}></PageHeader>
+    <PageHeader title={"VIDEO"} img={"assets/images/blog-picture-dabiaoge/video-header.png"}></PageHeader>
     <div className='videoList'>
       { 
         // console.log(videoList,'11111')

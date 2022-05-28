@@ -18,15 +18,15 @@
         height: 10%;
     }
 }
-.maincontent {
+.mainContent {
     width: 100%;
 
     .introduce {
         width: 100%;
         height: 400px;
-        background-image: url("../../../assets/images/mainpage/introduce.png");
+        background-image: url("../../../assets/images/blog-picture-dabiaoge/indexintroduce.png");
         background-size: 100%;
-        // background-position: 2% 2%;x,y轴偏移参数值
+        background-position: 0% 71%;//x,y轴偏移参数值
         text-align: center;
 
         span {
@@ -35,20 +35,20 @@
         }
     }
 
-    .typeform{
+    .typeForm{
         display: flex;
         flex-wrap:wrap;
         justify-content: center;
-        .typepicture{
+        .typePicture{
             position: relative;
             height: 600px;
             width: 660px;
             margin: 5px;
-            // background-size: 100% 100%;
+             background-size: 167%;
             background-repeat: no-repeat;
             background-position: 50% 70%;
             cursor: pointer;
-        .typename{
+        .typeName{
             width:10%;
             // background-color: rgba(60, 55, 55, 0.615);
             border-radius: 0 6px 6px 0;
@@ -56,7 +56,7 @@
             font-size: 32px;
             color: aliceblue;
         }
-        .typeintroduce{
+        .typeIntroduce{
             position:absolute;
             bottom: 0;
             font-size: 28px;
@@ -67,16 +67,16 @@
 
         }
         }
-        .typepicture:hover{
+        .typePicture:hover{
             box-shadow: 3px 4px 10px rgba(167, 167, 168, 0.845);
-            .typename{
+            .typeName{
                 // background-color: rgba(0, 0, 0, 0.377);
                 width: 100%;
                 font-size: 36px;
                 animation: typename-ani 0.5s 1;
                 animation-fill-mode:forwards;
             }
-            .typeintroduce{
+            .typeIntroduce{
                 display: inline;
                 animation: typeintroduce-ani 0.5s 1;
                 animation-fill-mode:forwards;

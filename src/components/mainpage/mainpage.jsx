@@ -11,7 +11,7 @@ export default function Mainpage() {
   const navigate = useNavigate()
   const userinfo = ()=>{
     return (
-      <div className='userinfo'>
+      <div className='userInfo'>
         <span>范大炮</span>
       </div>
     )
@@ -39,7 +39,7 @@ export default function Mainpage() {
   return (
     <div style={{minHeight:'720px'}}>
       <div className='header'>
-        <div className='header-left'>
+        <div className='headerLeft'>
         <div className='logo' onClick={()=>{backtoindex()}}>
           <span>Mrbean455</span>
         </div>
@@ -53,11 +53,11 @@ export default function Mainpage() {
           }
         </div>
         </div>
-        <div className='header-right'>
-        <div className='userform'>
+        <div className='headerRight'>
+        <div className='userForm'>
           <div className='user'>
             <Popover content={userinfo}>
-              <div className='user-icon'>
+              <div className='userIcon'>
                 <img src={visitorIcon} style={{width:'100%',height:'100%',borderRadius:"50%"}}></img>
               </div>
             </Popover>
@@ -74,7 +74,7 @@ export default function Mainpage() {
     <UpCircleOutlined onClick={()=>{backToTop()}} />
     </Space> 
     </div>
-      <div className='aboutme'>
+      <div className='aboutMe'>
       <span style={{fontSize:'22px'}}>关于我</span>
       <br></br>
       <span>只是一个喜欢代码并且喜欢倒腾花里胡哨的INFJ人格程序员</span>

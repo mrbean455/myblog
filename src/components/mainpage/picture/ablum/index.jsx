@@ -15,19 +15,15 @@ export default function Ablum() {
       navigate(-1)
   }
   return (
-    <div>
-      <div className='albumHeader'>
-        <Space>
-          <LeftCircleOutlined onClick={()=>{backToList()}}></LeftCircleOutlined>
-        </Space>
-      </div>
-      <div className='pictureshow'>
+    <div className='pictures'>
+
+      <div className='pictureList'>
             <Image.PreviewGroup>
               {
           ablum.map((item,index)=>{
             return (
-              <div className='picture' key={index}>
-              <div className='pictureInfo'>发布日期:{item.time}</div>
+              <div className='onePicture' key={index}>
+              <div className='onePictureInfo'>发布日期:{item.time}</div>
               <Image width={400} height={400} src={require(`../../../../${item.src}`)} key={index}></Image>
               </div>
 
@@ -35,8 +31,11 @@ export default function Ablum() {
           })
               }
             </Image.PreviewGroup>
-
-          
+      </div>
+      <div className='backToList'>
+        <Space>
+          <LeftCircleOutlined onClick={()=>{backToList()}}></LeftCircleOutlined>
+        </Space>
       </div>
     </div>
   )

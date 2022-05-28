@@ -38,17 +38,17 @@ export default function Login() {
     navigate('/mainpage/index')
   }
   return (
-    <div className='login-bg'>
+    <div className='loginBg'>
     <div className='slogen'>
       <span>WELCOME!</span>
     </div>
-    <div className='login-slider' ref={sliderRef}>
-    <div className='user-login-header user-login-header-name'>
+    <div className='loginSlider' ref={sliderRef}>
+    <div className='userLoginHeader userLoginHeaderName'>
       {visitor?
-      <span className='user-login-header-name'>VISI<span className='user-login-header-name-off'>T</span>OR</span>:
-      <span className='user-login-header-name'>US<span className='user-login-header-name-off'>E</span>R</span>}
-        <span className='user-login-header-welcome'>welcome</span>
-        <span className='user-login-header-login'>LOGIN</span>
+      <span className='userLoginHeaderName'>VISI<span className='userLoginHeaderNameOff'>T</span>OR</span>:
+      <span className='userLoginHeaderName'>US<span className='userLoginHeaderNameOff'>E</span>R</span>}
+        <span className='userLoginHeaderWelcome'>welcome</span>
+        <span className='userLoginHeaderLogin'>LOGIN</span>
     </div>
       <div className='changeLogin'>
       {visitor?
@@ -57,10 +57,10 @@ export default function Login() {
       <span style={{color:'#fff'}}>没有账号？<a onClick={()=>{changeLogin()}}>换种方式</a></span>}
       </div>
     </div>
-    <div className='login-border'>
+    <div className='loginBorder'>
       <div className='login'>
-      <div className='user-login'>
-    <div className='user-login-form'>
+      <div className='userLogin'>
+    <div className='userLoginForm'>
       <Form
       name="basic"
       onFinish={submitSuccess}
@@ -83,23 +83,23 @@ export default function Login() {
         <Input.Password placeholder="password" />
       </Form.Item>
       <Form.Item wrapperCol={{}}>
-        <Button htmlType="submit" className='login-button' shape="round" size={'large'}>
+        <Button htmlType="submit" className='loginButton' shape="round" size={'large'}>
           LOGIN
         </Button>
       </Form.Item>
     </Form>
     </div>
     </div>
-      <div className='visitor-login'>
-          <div className="visitor-note">
+      <div className='visitorLogin'>
+          <div className="visitorNote">
           <span>以游客方式访问</span>
           <br></br>
           <span>请点击下方按钮</span>
           </div>
-          <div className='visitor-btn'>
+          <div className='visitorBtn'>
             <Threearrows type="right"></Threearrows>
-            <div className='visitor-link' onClick={()=>{loginByVisitor()}}>
-          <div className='visitor-icon'>
+            <div className='visitorLink' onClick={()=>{loginByVisitor()}}>
+          <div className='visitorIcon'>
           </div>
         </div>
             <Threearrows type="left"></Threearrows>
