@@ -1,4 +1,5 @@
 @import "../main.less";
+
 @font-face{
     font-family: Vemanem;
     src: url("/assets/fonts/vemanem.ttf");
@@ -6,20 +7,16 @@
 };
 @keyframes offneon{
     0%,38%,39.2%,68%,69.2%,98%,99.2%{
-        -webkit-text-stroke-color: #282828;
+        -webkit-text-stroke-color: #a8a8a8;
         text-shadow: 
-        0 0 15.5px #454545,
-        0 0 15.5px #414141,
-        0 0 15.5px #454444,
-        0 0 12.5px #4a4949;
+        0 0 2px #7a7a7a,
+        0 0 2px #949494,
+        0 0 2px #949494,
+        0 0 2px #7c7c7c;
     }
     38.5%,68.5%,98.5%{
-        -webkit-text-stroke-color: #f36863;
-        text-shadow: 
-        0 0 15.5px #fa1c16,
-        0 0 15.5px #fa1c16,
-        0 0 15.5px #fa1c16,
-        0 0 10px #fed128;
+        -webkit-text-stroke-color: #ffefd0;
+        text-shadow: 0 0 10px #f1eeb9, 0 0 10px #f1eeb9, 0 0 10px #f1eeb9, 0 0 10px #d5d5d5;
     }
 }
 @keyframes animate {
@@ -57,7 +54,7 @@
 }
 
 .loginBg{
-    background-image: url('../../assets/images/blog-picture-dabiaoge/login-bg.jpg');
+    background-image: url('../../assets/images/blog-picture-dabiaoge/login-bg1.png');
     background-size: 100% 100%;
     font-size: 20px;
     width: 100%;
@@ -84,7 +81,8 @@
         z-index: 2022;
         height: 460px;
         width: 330px;
-        background-image: linear-gradient(to right, rgb(48, 66, 113) 16%, #2d65b9 75%);
+        // background-image: linear-gradient(to right, rgb(48, 66, 113) 16%, #2d65b9 75%);
+        background-image: linear-gradient(to right, #1b1f29 16%, #11151d 75%);
         position:absolute;
         transform:translateX(45%);
         transition-duration:0.5s;
@@ -94,23 +92,21 @@
             margin-top: 20px;
             height: 40%;
             width: 86%;
-            border-radius: 6px;
-            background-color: #000;
-            border: 4px solid rgb(6, 222, 222);
-            box-shadow: 
+            border-radius: 7px;
+            background-image: linear-gradient(to bottom, #932222 60%, #c5bfb4 65%);
+            filter: brightness(0.9);//brightness控制亮度
+
+            border: 4.5px solid #f3e3ae;
+            // filter: brightness(0.5);
             //控制内部发散四个值的顺序为 x,y,阴影模糊值,颜色,内或者外（inset为内）
-             0 0 50px rgba(33, 131, 230, 0.874) inset,
-             0 0 20px  rgb(6, 222, 222) inset,
-             //控制外部发散
-             0 0 40px rgba(33, 131, 230, 0.874),
-             0 0 20px  rgb(6, 222, 222);
+            box-shadow: 0 0 20px rgb(246 236 167 / 84%) inset, 0 0 14px rgb(208 195 53 / 83%) inset, 0 0 20px rgb(246 236 167 / 84%), 0 0 14px rgb(208 195 53 / 83%);
             text-align: center;
             .userLoginHeaderWelcome{
                 display: block;
                 margin-top: -10px;
                 margin-left: -60px;
                 font-size:36px;
-                color: #fed128;
+                color: #9f822b;
                 font-family: Pacifico;
                 text-shadow: 
                  0 0 8px #f0cb45,
@@ -122,22 +118,20 @@
                 display: block;
                 color:transparent !important;
                 font-size:58px !important;
+                font-family: ReactiveAnchor;
                 font-weight: 600;
                 paint-order: fill stroke markers;
-                -webkit-text-stroke-width: 2.5px;
-                -webkit-text-stroke-color: #f36863;
-                text-shadow: 
-                 0 0 15.5px #fa1c16,
-                 0 0 15.5px #fa1c16,
-                 0 0 15.5px #fa1c16,
-                 0 0 10px #fed128;
+                -webkit-text-stroke-width: 3px;
+                -webkit-text-stroke-color: #fff3dd;
+                text-shadow: 0 0 10px #f1eeb9, 0 0 10px #f1eeb9, 0 0 10px #f1eeb9, 0 0 10px #d5d5d5;
                  .userLoginHeaderNameOff{
-                    -webkit-text-stroke-color: #282828;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #585858;
                     text-shadow: 
-                    0 0 15.5px #454545,
-                    0 0 15.5px #414141,
-                    0 0 15.5px #454444,
-                    0 0 12.5px #4a4949;
+                    0 0 15.5px #777575,
+                    0 0 15.5px #777575,
+                    0 0 15.5px #777575,
+                    0 0 12.5px #777575;
                     animation: offneon 3s infinite;
                  }
             }
@@ -146,12 +140,9 @@
                 margin-top: -15px;
                 margin-right: -60px;
                 font-size:38px;
-                color: rgb(36, 241, 25);
-                font-family: Vemanem;
-                text-shadow: 
-                 0 0 8px rgb(36, 241, 25),
-                 0 0 8px rgb(36, 241, 25),
-                 0 0 8px rgb(36, 241, 25),
+                color: #1a6d16;
+                font-family: Cathedral;
+                text-shadow: 0 0 4px #4c6e4a, 0 0 3px #548c53, 0 0 2px #2a5727;
                 ;
             }
         }
@@ -160,30 +151,25 @@
             top:20%;
             height: 12%;
             background-color: transparent;
+            font-family: ReactiveAnchor;
             background-size: 100% 99%;
             text-align: center;
+            color: #000;
             a{
-                color:rgb(99, 232, 226);
+                color:#c61c1c;
             }
 
         }
     }
-    .loginBorder{
-        z-index: 2021;
-        height: 400px;
-        width: 660px;
-        padding: 5px;
-        border-radius: 5px;
-        background: linear-gradient(to top, rgb(243, 65, 65) 10%, rgb(34, 104, 165) 20%, rgb(252, 252, 23) 60%, rgb(84, 179, 84) 70%); 
-        display: flex;
-        text-align: center;
-        align-items: center; 
         .login{
-            background-color: #446490c2;
+            background-color: #1c1d20de;
+            z-index: 2021;
+            height: 400px;
+            width: 660px;
+            padding: 5px;
             border-radius: 5px;
             display: flex;
-            height: 100%;
-            width: 100%;
+            
             .userLogin{ 
                 display: flex;
                 justify-content: center;
@@ -196,43 +182,43 @@
                 width: 80%;
                 margin: 5px;
                 padding: 5px;
+                .loginButton{
+                    font-family: ReactiveAnchor;
+                    font-weight: 800 !important;
+                    background-color: #805812 !important;
+                    filter: brightness(0.9);
+                    color: #b89e31 !important;
+                    border-radius: 2px;
+                    border: 2px solid #5f410f !important;
+                }
+                .loginButton :hover{
+                    filter: brightness(0.9);
+                    text-shadow: 0 0 6px #c24343, 0 0 6px #c24343, 0 0 6px #c24343;
+                }
                 .ant-input  {
+                    font-family:ReactiveAnchor ;
                     background-color: transparent;
                     border: 0px;
                     border-radius: none !important;
-                    border-bottom: 2px solid rgb(61, 170, 234);
+                    border-bottom: 2px solid #909090;
                     color: #fff;
                 }
                 .ant-input:focus{
-                    box-shadow: 0 0 0 2px rgb(2 21 39 / 20%);
+                    box-shadow: 0 0 0 2px #fff3dd;
                     border-bottom: none;
                 }
                 .ant-input-password{
                     background-color: transparent;
                     border: 0px;
                     border-radius: none !important;
-                    border-bottom: 2px solid rgb(61, 170, 234);
+                    border-bottom: 2px solid #909090;
                     .ant-input{
                         border-bottom: none;
                     }
                 }
                 .ant-input-affix-wrapper-focused{
-                    box-shadow: 0 0 0 2px rgb(2 21 39 / 20%);
+                    box-shadow: 0 0 0 2px #fff3dd;
                     border-bottom: none;
-                }
-                .ant-btn{
-                        font-weight: 600;
-                        width: 90px;
-                       background-color: rgb(50, 60, 90);
-                       color: rgb(234, 232, 232);
-                       border: none;
-                   }
-                .ant-btn:hover{
-                    color: #fff;
-                    font-weight: 600;
-                    // background-color: rgb(27, 95, 131);
-                    text-shadow: 0 0 10px #56f056, 0 0 10px #72f972, 0 0 10px #42f842;
-                    color: #a0f3a0;
                 }
 
             }
@@ -250,8 +236,9 @@
                 padding: 20px;
                 .visitorNote{
                     span{
-                        color: rgb(21, 43, 76);
-                        text-shadow: 0 0 10px rgb(21, 242, 250);
+                        font-family: ReactiveAnchor;
+                        color: rgb(206, 194, 174);
+                        text-shadow: 0 0 10px rgb(235, 205, 35);
                         font-weight: 500;
                     }
                 }
@@ -290,6 +277,5 @@
                 }
             }
             }
-    }
 
 }

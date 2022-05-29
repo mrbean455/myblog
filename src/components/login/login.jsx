@@ -22,10 +22,10 @@ export default function Login() {
     let sliderStyle = sliderRef.current.style;
     if(visitor){
       sliderStyle.transform="translateX(45%)";
-      sliderStyle.backgroundImage="linear-gradient(to right, rgb(48, 66, 113) 16%, #2d65b9 75%)";
+      sliderStyle.backgroundImage="background-image: linear-gradient(to right, #1b1f29 16%, #11151d 75%);";
     }else{
       sliderStyle.transform="translateX(-45%)";
-      sliderStyle.backgroundImage="linear-gradient(to left, rgb(48, 66, 113) 16%, #2d65b9 75%)";
+      sliderStyle.backgroundImage="background-image: linear-gradient(to left, #1b1f29 16%, #11151d 75%);";
     }
     console.log(document.body.clientHeight )
     setVisitor(!visitor);
@@ -46,18 +46,17 @@ export default function Login() {
     <div className='userLoginHeader userLoginHeaderName'>
       {visitor?
       <span className='userLoginHeaderName'>VISI<span className='userLoginHeaderNameOff'>T</span>OR</span>:
-      <span className='userLoginHeaderName'>US<span className='userLoginHeaderNameOff'>E</span>R</span>}
-        <span className='userLoginHeaderWelcome'>welcome</span>
+      <span className='userLoginHeaderName'>U S <span className='userLoginHeaderNameOff'>E</span> R</span>}
+        <span className='userLoginHeaderWelcome'>WELCOME</span>
         <span className='userLoginHeaderLogin'>LOGIN</span>
     </div>
       <div className='changeLogin'>
       {visitor?
-      <span style={{color:'#fff'}}>已有账号？<a onClick={()=>{changeLogin()}}>账号登录</a></span>
+      <span style={{color:'rgb(206 194 174)'}}>USE ACCOUNT ？<a onClick={()=>{changeLogin()}}>USER LOGIN</a></span>
       :
-      <span style={{color:'#fff'}}>没有账号？<a onClick={()=>{changeLogin()}}>换种方式</a></span>}
+      <span style={{color:'rgb(206 194 174)'}}>NO ACCOUNT ？<a onClick={()=>{changeLogin()}}>OTHER LOGIN</a></span>}
       </div>
     </div>
-    <div className='loginBorder'>
       <div className='login'>
       <div className='userLogin'>
     <div className='userLoginForm'>
@@ -92,9 +91,9 @@ export default function Login() {
     </div>
       <div className='visitorLogin'>
           <div className="visitorNote">
-          <span>以游客方式访问</span>
+          <span>VISIT AS A TOURIST</span>
           <br></br>
-          <span>请点击下方按钮</span>
+          <span>CLICK THE BUTTON</span>
           </div>
           <div className='visitorBtn'>
             <Threearrows type="right"></Threearrows>
@@ -107,7 +106,6 @@ export default function Login() {
 
       </div>
       </div>
-    </div>
     </div>
   )
 }
