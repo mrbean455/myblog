@@ -3,9 +3,9 @@ import './index.less'
 import { useNavigate } from 'react-router-dom'
 import { Space } from 'antd';
 import { ClockCircleTwoTone, LikeTwoTone  ,LeftCircleOutlined ,EyeTwoTone} from '@ant-design/icons';
+import Backpre from "../../backpre/index"
 export default function Index(props) {
   const [likeFlag,setLikeFlag] = useState(false);
-
   const articleDemo1 ={
     id:"1",
     title:"今天是星期一今天是星期一",
@@ -17,11 +17,6 @@ export default function Index(props) {
     sort:["前端","leaflet"]
   } 
   const [articleDemo,setArticleDemo]=useState(articleDemo1)
-  const navigate = useNavigate();
-  const backToList = ()=>{
-    //-1表示后退一位
-      navigate(-1)
-  }
   const addLike=()=>{
     let count = null;
     if(likeFlag){
@@ -33,6 +28,7 @@ export default function Index(props) {
     setArticleDemo({...articleDemo,like:count});
   }
   return (
+    <div  style={{background:'#1f1d1d',width:"100%",overflow:"auto"}}>
     <div className='articleDetail'>
       <h1 className='articleDetailTitle'>{articleDemo.title}</h1>
       <div className='articleDetailInfo'>
@@ -44,11 +40,9 @@ export default function Index(props) {
       <div className='articleDetailContent'>
         <span>{articleDemo.content}</span>
       </div>
-      <div className='backToList'>
-        <Space>
-          <LeftCircleOutlined onClick={()=>{backToList()}}></LeftCircleOutlined>
-        </Space>
-      </div>
     </div>
+    <Backpre></Backpre>
+    </div>
+
   )
 }

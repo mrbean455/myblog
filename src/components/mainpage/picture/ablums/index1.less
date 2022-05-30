@@ -1,4 +1,8 @@
 
+.albumsList{
+    height: 100%;
+    background-color: #1f1d1d;
+}
 .albums{
     position: relative;
     padding: 10px;
@@ -10,10 +14,14 @@
         width: 500px;
         height: 420px;
         position: relative;
+        border-radius: 4px;
+        margin-top: 6px;
+        margin-right: 10px;
         .oneAlbumPicture{
             position: absolute;
             height: 100%;
             width: 500px;
+            border-radius: 4px;
             cursor: pointer;
             transform: perspective(500px) rotateY(0deg);
             backface-visibility: hidden;
@@ -29,6 +37,7 @@
             }
             img{
                 position: absolute;
+                border-radius: 4px;
                 z-index: 90;
             }
             .oneAlbumNum{
@@ -47,8 +56,9 @@
         position: absolute;
         width: 500px;
         height: 100%;
-        background: rgba(0, 0, 0, 0.437);
-        color:rgba(238, 238, 238, 0.877) ;
+        border-radius: 4px;
+        background: rgba(248, 234, 179, 0.866);
+        color:rgba(53, 52, 52, 0.877) ;
         transition: transform 0.5s linear;
         backface-visibility: hidden;
         transform: perspective(500px) rotateY(180deg);

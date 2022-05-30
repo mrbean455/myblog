@@ -22,10 +22,10 @@ export default function Login() {
     let sliderStyle = sliderRef.current.style;
     if(visitor){
       sliderStyle.transform="translateX(45%)";
-      sliderStyle.backgroundImage="background-image: linear-gradient(to right, #1b1f29 16%, #11151d 75%);";
+      sliderStyle.backgroundImage="background-image: linear-gradient(to right, #1f1d1d 32%, #211e1d 71%);";
     }else{
       sliderStyle.transform="translateX(-45%)";
-      sliderStyle.backgroundImage="background-image: linear-gradient(to left, #1b1f29 16%, #11151d 75%);";
+      sliderStyle.backgroundImage="background-image: linear-gradient(to left, #1f1d1d 32%, #211e1d 71%);";
     }
     console.log(document.body.clientHeight )
     setVisitor(!visitor);

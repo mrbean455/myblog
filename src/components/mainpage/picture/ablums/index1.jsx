@@ -26,7 +26,7 @@ export default function Ablums() {
     }
   })
   return (
-    <div style={{ height: '100%' }}>
+    <div className='albumsList'>
       <div className='albums'>
             {
               albums.map((item,index)=>{

@@ -85,13 +85,12 @@ export default function Ablums() {
     }
   })
   return (
-    <div style={{ height: '100%' }}>
+    <div className='albumsList'>
       <div className='albums'>
             {
               albums.map((item,index)=>{
                 return (
                   <div className='album' key={index}>
-                  <div className={`left-${index} album-left`}>
                   <div className='albumpicture'>
                     <span className='albumpicturename'>{item.name}</span>
                     <img src={require(`../../../../${item.fmimg}`)} height="100%" width="100%" onClick={()=>{goToDetail(item.id)}}> 
@@ -103,7 +102,6 @@ export default function Ablums() {
                         <span>{item.num}</span>
                       </Space>
                     </div>
-                  </div>
                   </div>
                   <div className={`right-${index} album-right `}>
                     <div className='abluminfo'>
