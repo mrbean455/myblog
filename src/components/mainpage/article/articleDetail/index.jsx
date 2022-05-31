@@ -41,7 +41,7 @@ export default function Index(props) {
         <span>{articleDemo.content}</span>
       </div>
     </div>
-    <Backpre></Backpre>
+    <Backpre leftVal={20} bottomVal={130} type={1}></Backpre>
     </div>
 
   )
