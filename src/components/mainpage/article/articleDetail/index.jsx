@@ -1,9 +1,8 @@
 import React ,{useState}from 'react'
 import './index.less'
 import { useNavigate } from 'react-router-dom'
-import { Space } from 'antd';
-import { ClockCircleTwoTone, LikeTwoTone  ,LeftCircleOutlined ,EyeTwoTone} from '@ant-design/icons';
-import Backpre from "../../backpre/index"
+import { ClockCircleTwoTone, LikeTwoTone  ,EyeTwoTone} from '@ant-design/icons';
+import DragBox from "../../backpre/index"
 export default function Index(props) {
   const [likeFlag,setLikeFlag] = useState(false);
   const articleDemo1 ={
@@ -41,7 +40,7 @@ export default function Index(props) {
         <span>{articleDemo.content}</span>
       </div>
     </div>
-    <Backpre leftVal={20} bottomVal={130} type={1}></Backpre>
+    <DragBox type={'left'} btnClick={'1'}></DragBox>
     </div>
 
   )

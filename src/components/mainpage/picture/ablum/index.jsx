@@ -1,8 +1,9 @@
 import React from 'react'
 import './index.less'
 import { Space,Image } from 'antd'
-import {LeftCircleOutlined,ClockCircleTwoTone} from "@ant-design/icons"
+import {ClockCircleTwoTone} from "@ant-design/icons"
 import { useNavigate } from 'react-router-dom'
+import DragBox from "../../backpre/index"
 
 
 
@@ -32,11 +33,7 @@ export default function Ablum() {
               }
             </Image.PreviewGroup>
       </div>
-      <div className='backToList'>
-        <Space>
-          <LeftCircleOutlined onClick={()=>{backToList()}}></LeftCircleOutlined>
-        </Space>
-      </div>
+            <DragBox btnClick='1'></DragBox>
     </div>
   )
 }

@@ -2,8 +2,8 @@ import React,{useEffect} from 'react';
 import './mainpage.less';
 import {Link,Outlet,useNavigate} from 'react-router-dom';
 import visitorIcon from "../../assets/images/login/visitor-icon.JPG"
-import {Popover,Space} from "antd";
-import { UpCircleOutlined  } from '@ant-design/icons';
+import {Popover} from "antd";
+import DragBox from "./backpre/index"
 
 export default function Mainpage() {
   
@@ -69,11 +69,7 @@ export default function Mainpage() {
       <div style={{paddingTop:"52px",width:"100%"}}>
         <Outlet></Outlet>
       </div>
-    <div className='ToTop'>
-    <Space>
-    <UpCircleOutlined onClick={()=>{backToTop()}} />
-    </Space> 
-    </div>
+      <DragBox type="right" btnClick='2'></DragBox>
       <div className='aboutMe'>
       <span style={{fontSize:'22px'}}>关于我</span>
       <br></br>
