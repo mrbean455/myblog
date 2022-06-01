@@ -1,7 +1,6 @@
 import React,{useEffect} from 'react';
 import './mainpage.less';
 import {Link,Outlet,useNavigate} from 'react-router-dom';
-import visitorIcon from "../../assets/images/login/visitor-icon.JPG"
 import {Popover} from "antd";
 import DragBox from "./backpre/index"
 
@@ -11,11 +10,26 @@ export default function Mainpage() {
   const navigate = useNavigate()
   const userinfo = ()=>{
     return (
-      <div className='userInfo'>
-        <span>范大炮</span>
+      <div>
+        <div style={{textAlign:'center'}}>{userInfo.name}</div>
+        {
+          userInfo.type=="admin"?
+          <div style={{marginTop:'4px'}}>
+            <button>页面管理</button>
+            </div>
+            :''
+        }
+
       </div>
     )
   }
+  const todayNum=10;
+  const totalNum=200;
+  const  userInfo={
+     type:'admin',
+     name:'龅牙',
+     icon:'assets/images/blog-picture-dabiaoge/visitoricon.png'
+  } 
   const menuType =[
                   {type:'article',name:'博文'},
                   {type:'picture',name:'图片'},
@@ -58,7 +72,7 @@ export default function Mainpage() {
           <div className='user'>
             <Popover content={userinfo}>
               <div className='userIcon'>
-                <img src={visitorIcon} style={{width:'100%',height:'100%',borderRadius:"50%"}}></img>
+                <img src={require(`../../${userInfo.icon}`)} style={{width:'100%',height:'100%',borderRadius:"50%"}}></img>
               </div>
             </Popover>
 
@@ -78,6 +92,10 @@ export default function Mainpage() {
       <span>Github:<a href='https://github.com/mrbean455' target={'_blank'}>https://github.com/mrbean455</a></span>
       <br></br>
       <span>otherBlog:<a href='https://juejin.cn/user/2630507106147517' target={'_blank'}>https://juejin.cn/user/2630507106147517</a></span>
+      <div className='visitNum'>
+        <div>当日访问次数:<span>{todayNum}</span></div>
+        <div>总访问次数:<span>{totalNum}</span></div>
+      </div>
     </div>
     </div>
   )
