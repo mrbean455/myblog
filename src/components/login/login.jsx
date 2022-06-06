@@ -3,6 +3,8 @@ import "./login.less";
 import {Form, Input, Button}from 'antd'
 import Threearrows from '../icon/threearrows/threearrows';
 import { useNavigate } from 'react-router-dom';
+//全局引入axios的二次封装
+import $request from "../../utils/request"
 export default function Login() {
   //获取ref的方法
   const sliderRef = React.useRef(null)
@@ -11,7 +13,11 @@ export default function Login() {
   //state
   const [visitor,setVisitor] =React.useState(false)
   //function
+
   const submitSuccess=(values)=>{
+    $request(`/login/loginbyuser?username=${values.username}&password=${values.password}`).then(res=>{
+      console.log(res)
+    })
     console.log(values,'jjj')
   }
   const submitFailed=(error)=>{
@@ -82,7 +88,7 @@ export default function Login() {
         <Input.Password placeholder="password" />
       </Form.Item>
       <Form.Item wrapperCol={{}}>
-        <Button htmlType="submit" className='loginButton' shape="round" size={'large'}>
+        <Button htmlType="submit" className='loginButton' shape="round" size={'large'} >
           LOGIN
         </Button>
       </Form.Item>
