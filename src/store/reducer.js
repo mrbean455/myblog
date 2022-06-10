@@ -1,6 +1,8 @@
 
 const defaultState ={
-    videoFlag:false
+    videoFlag:false,
+    userInfo:{},
+    token:null,
 };
 
 
@@ -9,6 +11,16 @@ const reducer =(state = defaultState,action)=>{
         case "changeVideoFlag":{
             let newState =JSON.parse(JSON.stringify(state));
             newState.videoFlag = action.value;
+            return newState;
+        }
+        case "setToken":{
+            let newState = JSON.parse(JSON.stringify(state));
+            newState.token = action.value;
+            return newState;
+        }
+        case "setUserInfo":{
+            let newState = JSON.parse(JSON.stringify(state));
+            newState.userInfo = action.value;
             return newState;
         }
     }

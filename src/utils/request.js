@@ -1,7 +1,8 @@
 //用于二次封装axios
 //1.axios
 import axios from "axios";
-
+//引入react-redux来管理权限
+import store from "../store/store"
 
 //配置baseURL，这样在写url的时候可以简写
 const baseURL = "http://localhost:8000";
@@ -16,6 +17,9 @@ const  instance  = axios.create({
 
 //添加请求拦截
 instance.interceptors.request.use(req=>{
+    let token = store.getState().token?store.getState().token:{};
+    req.headers.token = token;
+    console.log(req,'req');
     console.log('请求被拦截')
     return req
 },error=>{

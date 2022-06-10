@@ -4,6 +4,7 @@ import './index.less';
 //引入react-redux的connect
 import {connect} from 'react-redux';
 import  PageHeader  from '../../pageHeader/index';
+import $request  from "../../../utils/request"
 
 //当决定要在组件中使用react-redux时，默认暴露就要发生变化，是默认暴露connect
 const stateToProps = (state)=>{
@@ -27,18 +28,22 @@ const dispatchToProps = (dispatch)=>{
   const [videoList,setVideoList] =React.useState([]);
   let showVideodetail = {url:'',options:{},config:{},};
   useEffect(()=>{
-      let testList=[{id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'},
-      {id:"4",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"5",url:'',img:''},{id:"6",url:'',img:'assets/video/test.jpg'},
-      {id:"7",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"8",url:'',img:''},{id:"9",url:'',img:'assets/video/test.jpg'}];
-      if(videoList.length==0){
-        setVideoList(testList)
-        console.log('222222')
-      }
+    $request("/video/getvideos").then(res=>{
+      setVideoList(res);
+    })
+
+      // let testList=[{id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'},
+      // {id:"4",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"5",url:'',img:''},{id:"6",url:'',img:'assets/video/test.jpg'},
+      // {id:"7",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"8",url:'',img:''},{id:"9",url:'',img:'assets/video/test.jpg'}];
+      // if(videoList.length==0){
+      //   setVideoList(testList)
+      //   console.log('222222')
+      // }
     return()=>{
 
       }
     
-  })
+  },setVideoList)
 const openVideoComp = (id)=>{
 
     if(videoFlag){
