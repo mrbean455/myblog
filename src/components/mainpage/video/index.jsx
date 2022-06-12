@@ -22,6 +22,13 @@ const dispatchToProps = (dispatch)=>{
   }
 }
 
+const getVideoImg= (img)=>{
+  // let url ='D:/work/blogResource/videos/test01.png';
+  // let test = "test01.png"
+  // let imgUrl  =require(`D:/work/blogResource/${}`);
+  // return imgUrl;
+}
+
  const Video=(props)=> {
    let {videoFlag,changeShowVideoFlag} = props;
   const [videoInfo,setVideoInfo] =React.useState({url:'',options:{},config:{}}); 
@@ -30,6 +37,7 @@ const dispatchToProps = (dispatch)=>{
   useEffect(()=>{
     $request("/video/getvideos").then(res=>{
       setVideoList(res);
+      console.log(res,'diveo')
     })
 
       // let testList=[{id:"1",url:'assets/video/test.mp4',img:'assets/video/test.jpg'},{id:"2",url:'',img:''},{id:"3",url:'',img:'assets/video/test.jpg'},
@@ -43,13 +51,13 @@ const dispatchToProps = (dispatch)=>{
 
       }
     
-  },setVideoList)
-const openVideoComp = (id)=>{
+  },[])
+const openVideoComp = (url)=>{
 
     if(videoFlag){
 
     }else{
-      setVideoInfo({...{url:'assets/video/test.mp4'}})
+      setVideoInfo({...{url,}})
     }
     changeShowVideoFlag(!videoFlag);
 }
@@ -62,8 +70,8 @@ const openVideoComp = (id)=>{
         // console.log(videoList,'11111')
         videoList.map((item)=>{
           return(
-            <div key={item.id} className='videoDetail' onClick={()=>{openVideoComp('test')}}>
-              <img src={require(`../../../${item.img}`)} alt="" className='videoImg'></img>
+            <div key={item.id} className='videoDetail' onClick={()=>{openVideoComp(item.url)}}>
+              <img src={getVideoImg(item.img)} alt="" className='videoImg'></img>
             </div>
           )
 

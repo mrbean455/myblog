@@ -17,7 +17,8 @@ const  instance  = axios.create({
 
 //添加请求拦截
 instance.interceptors.request.use(req=>{
-    let token = store.getState().token?store.getState().token:{};
+    let token = store.getState().token?store.getState().token:sessionStorage.getItem("token")?sessionStorage.getItem("token"):{};
+    console.log(token,'token,axios')
     req.headers.token = token;
     console.log(req,'req');
     console.log('请求被拦截')

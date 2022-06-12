@@ -33,7 +33,7 @@ export default function Index() {
       <div className='typeForm'>
         {
             menuType.map((item,index)=>{
-              {/*在react的标签中直接用backgroundImage时候，url直接写路径是找不到src下的路径的，要用require方法来实现从src下寻找 */}
+              {/*在react的标签中直接用backgroundImage时候，url直接写路径是找不到src下的路径的，要用require方法来实现从src下寻找,可以通过注释moduleScope来访问src以外路径 */}
               {/* require只接受两种形式参数 1.纯静态变量 2.静态+动态变量，不能纯动态 */}
               return <div key={index} className="typePicture" style={{backgroundImage:`url(${require(`../../../${item.url}`)})`}} onClick={()=>{gotoPage(item.type)}}>
                 <span className='typeName'>

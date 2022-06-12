@@ -40,11 +40,15 @@ const  Login=(props) =>{
   //function
 
   const submitSuccess=(values)=>{
+    //发送登录请求前先清空Session中的token
+    sessionStorage.removeItem("token");
     $request(`/login/loginbyuser?username=${values.username}&password=${values.password}`).then(res=>{
       if(res.state){
         console.log(res,'res');
           //存到redux
           setToken(res.token);
+          //存到sessionStorage中
+          sessionStorage.setItem("token",res.token)
           setUserInfo(res.user);
           navigate('/mainpage/index');
       }
