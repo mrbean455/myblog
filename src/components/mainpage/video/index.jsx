@@ -71,7 +71,7 @@ const openVideoComp = (url)=>{
         videoList.map((item)=>{
           return(
             <div key={item.id} className='videoDetail' onClick={()=>{openVideoComp(item.url)}}>
-              <img src={getVideoImg(item.img)} alt="" className='videoImg'></img>
+              <img src={item.img} alt="" className='videoImg'></img>
             </div>
           )
 

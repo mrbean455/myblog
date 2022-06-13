@@ -20,7 +20,6 @@ instance.interceptors.request.use(req=>{
     let token = store.getState().token?store.getState().token:sessionStorage.getItem("token")?sessionStorage.getItem("token"):{};
     console.log(token,'token,axios')
     req.headers.token = token;
-    console.log(req,'req');
     console.log('请求被拦截')
     return req
 },error=>{
@@ -30,8 +29,6 @@ instance.interceptors.request.use(req=>{
 //添加返回拦截
 instance.interceptors.response.use(response=>{
     const {status,data} = response;//返回的数据在data中
-    console.log(response,'res')
-    console.log(data,'data')
     return data;
 },error=>{
     if(!error.response){

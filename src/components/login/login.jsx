@@ -1,6 +1,6 @@
 import React,{useState,useEffect, Fragment} from 'react'
 import "./login.less";
-import {Form, Input, Button}from 'antd'
+import {Form, Input, Button,message}from 'antd'
 import Threearrows from '../icon/threearrows/threearrows';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -51,9 +51,10 @@ const  Login=(props) =>{
           sessionStorage.setItem("token",res.token)
           setUserInfo(res.user);
           navigate('/mainpage/index');
+      }else{
+        message.error(res.msg);
       }
     })
-    console.log(values,'jjj')
   }
   const submitFailed=(error)=>{
     console.log(error,'eoor')
@@ -75,7 +76,13 @@ const  Login=(props) =>{
   const loginByVisitor = ()=>{
     console.log('以访客方式登录');
     $request(`/login/loginbyvisitor`).then(res=>{
-      console.log(res,'visitor')
+                //存到redux
+                setToken(res.token);
+                //存到sessionStorage中
+                sessionStorage.setItem("token",res.token)
+                setUserInfo(res.user);
+                navigate('/mainpage/index');
+
     })
     //1.发请求
     //2.跳转

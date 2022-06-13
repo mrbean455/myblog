@@ -38,7 +38,7 @@ const VideoComp = (props)=>{
             </div>
             <div className='video-panel'>
             <video-js id="myVideo" height="500px" width="600px" controls preload="auto" >
-                <source src={require(url)} type="video/mp4"></source>
+                <source src={url} type="video/mp4"></source>
             </video-js>
             </div>
         </div>

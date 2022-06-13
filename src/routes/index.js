@@ -10,6 +10,7 @@ import Video from "../components/mainpage/video";
 import Mainindex from "../components/mainpage/mainindex";
 import Albums from "../components/mainpage/picture/ablums/index1.jsx"
 import Album from "../components/mainpage/picture/ablum";
+import Auth from "../components/auth/auth"
 //路由表
 export default [
     {
@@ -18,7 +19,7 @@ export default [
     },
     {
         path:'/mainpage',
-        element:<Mainpage></Mainpage>,
+        element:<Auth><Mainpage></Mainpage></Auth>,
         children:[
             {
                 path:'index',
@@ -62,7 +63,7 @@ export default [
     },
     {
         path:'/',
-        element:<Navigate to="/login"></Navigate>
+        element:<Navigate to="/mainpage/index"></Navigate>
     }
 
 ]
