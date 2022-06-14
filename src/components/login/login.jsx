@@ -49,6 +49,7 @@ const  Login=(props) =>{
           setToken(res.token);
           //存到sessionStorage中
           sessionStorage.setItem("token",res.token)
+          sessionStorage.setItem("userInfo",JSON.stringify(res.user))
           setUserInfo(res.user);
           navigate('/mainpage/index');
       }else{
@@ -73,14 +74,15 @@ const  Login=(props) =>{
     setVisitor(!visitor);
 
   }
-  const loginByVisitor = ()=>{
+  const loginByVisitor = async()=>{
     console.log('以访客方式登录');
-    $request(`/login/loginbyvisitor`).then(res=>{
+   await $request(`/login/loginbyvisitor`).then(res=>{
                 //存到redux
                 setToken(res.token);
                 //存到sessionStorage中
                 sessionStorage.setItem("token",res.token)
                 setUserInfo(res.user);
+                sessionStorage.setItem("userInfo",JSON.stringify(res.user))
                 navigate('/mainpage/index');
 
     })

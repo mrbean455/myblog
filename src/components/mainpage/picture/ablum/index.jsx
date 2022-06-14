@@ -1,31 +1,37 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './index.less'
 import { Space,Image } from 'antd'
 import {ClockCircleTwoTone} from "@ant-design/icons"
-import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import DragBox from "../../backpre/index"
-
+import $request from "../../../../utils/request"
 
 
 export default function Ablum() {
-  const navigate = useNavigate();
-  const ablum = [{src:'assets/images/mainpage/image/fengjing.jpg',time:'2022-05-27'},{src:'assets/images/mainpage/image/renwu.jpg'},{src:'assets/images/mainpage/image/fengjing.jpg'},{src:'assets/images/mainpage/image/fengjing.jpg'},
-  {src:'assets/images/mainpage/image/fengjing.jpg',time:'2022-05-27'},{src:'assets/images/mainpage/image/fengjing.jpg',time:'2022-05-27'}];
-  const backToList = ()=>{
-    //-1表示后退一位
-      navigate(-1)
+  const [pictures,setPictures] = useState([]);
+  const params  =useParams();
+
+  const loadData = async()=>{
+    await $request(`/picture/getpictures?albumId=${params.id}`).then(res=>{
+      setPictures(res);
+    })
   }
+
+
+  useEffect(()=>{
+    loadData();
+  },[])
   return (
     <div className='pictures'>
 
       <div className='pictureList'>
             <Image.PreviewGroup>
               {
-          ablum.map((item,index)=>{
+          pictures.map((item)=>{
             return (
-              <div className='onePicture' key={index}>
-              <div className='onePictureInfo'>发布日期:{item.time}</div>
-              <Image width={400} height={400} src={require(`../../../../${item.src}`)} key={index}></Image>
+              <div className='onePicture' key={item.id}>
+              <div className='onePictureInfo'>发布日期:{item.date}</div>
+              <Image width={400} height={400} src={item.url} key={item.id}></Image>
               </div>
 
             )

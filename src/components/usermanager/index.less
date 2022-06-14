@@ -1,0 +1,52 @@
+.userManager{
+    position: relative;
+    width: 40px;
+    height: 100%;
+    float: right;
+    right: 26px;
+    .userIcon{
+        position: relative;
+        width:40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 30px;
+        margin-top: 5px;
+        cursor: pointer;
+        img{
+            width:100%;
+            height:100%;
+            border-radius:50%;
+        }
+    }
+    .managerContent{
+        position: absolute;
+        width: 160px;
+        height: 100px;
+        right: -17px;
+        top: 46px;
+        border: 3px solid #3b3b3b;
+        background-color: rgba(49, 49, 50, 0.89);
+        border-radius: 10px;
+        display: none;
+        text-align: center;
+        padding:10px;
+        .userName{
+            color: #f7f2f2;
+        }
+        .userType{
+            color: #c2c1c1;
+        }
+        .userOther{
+            button{
+               background-color: #cacaca; 
+               border-radius: 6px;
+               cursor: pointer;
+            }
+        }
+    }
+}
+.userManager:hover{
+    .managerContent{
+        display: block;
+    }
+}

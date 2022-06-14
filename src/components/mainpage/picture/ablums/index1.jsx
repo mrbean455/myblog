@@ -1,40 +1,38 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import "./index1.less";
 import { Space } from 'antd'
 import { PictureOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import $request from "../../../../utils/request"
 
 export default function Ablums() {
+  const [albumList,setAlbumList] = useState([]);
   const navigate = useNavigate()
-  const albums = [{name:'风景',date:'2022-04-20',fmimg:'assets/images/mainpage/image/fengjing.jpg',introduce:"无",id:'001',num:10},
-  {name:'人物',date:'2022-04-20',fmimg:'assets/images/mainpage/image/renwu.jpg',introduce:"今天是星期六今天是星期六今天是星期六今天是星期六今天是星期六今天是星期六今天是星期六今天是星期六",id:'002',num:10},
-  {name:'截图',date:'2022-04-20',fmimg:'assets/images/mainpage/image/jietu.jpg',introduce:"无",id:'003',num:10},
-  {name:'搞笑',date:'2022-04-20',fmimg:'assets/images/mainpage/image/gaoxiao.jpg',introduce:"无",id:'004',num:10}]
-  const pitureOther = ()=>{
-    return(
-      <div style={{cursor:'pointer'}}>
-        删除
-      </div>
-    )
+
+  const loadDate = async()=>{
+    await $request("/picture/getalbums").then(res=>{
+      setAlbumList(res)
+    })
   }
   //跳转到相册详情
   const goToDetail = (id)=>{
     navigate(`album/${id}`);
   }
   useEffect(() => {
+      loadDate();
     return () => {
     }
-  })
+  },[])
   return (
     <div className='albumsList'>
       <div className='albums'>
             {
-              albums.map((item,index)=>{
+             albumList.map((item,index)=>{
                 return (
-                    <div className='oneAlbum' key={index}>
+                    <div className='oneAlbum' key={item.id}>
                     <div className='oneAlbumPicture'>
-                    <span className='oneAlbumName'>{item.name}</span>
-                    <img src={require(`../../../../${item.fmimg}`)} height="100%" width="100%" onClick={()=>{goToDetail(item.id)}}> 
+                    <span className='oneAlbumName'>{item.albumName}</span>
+                    <img src={item.bigPicture} height="100%" width="100%" onClick={()=>{goToDetail(item.id)}}> 
                     </img>
                     <div className='oneAlbumNum'>
                       <Space>

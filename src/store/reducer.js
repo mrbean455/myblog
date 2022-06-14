@@ -1,7 +1,7 @@
 
 const defaultState ={
     videoFlag:false,
-    userInfo:{},
+    userInfo:null,
     token:null,
 };
 

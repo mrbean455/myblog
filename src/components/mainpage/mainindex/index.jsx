@@ -13,7 +13,7 @@ export default function Index() {
     {type:'article',name:'博文',url:'assets/images/blog-picture-dabiaoge/article.jpg',introduce:'分享关于我自己写的一些技术博客或者解决方法心得'},
     {type:'picture',name:'图片',url:'assets/images/blog-picture-dabiaoge/picture.jpg',introduce:'分享一些我觉得美的照片,有自己拍的和他人拍摄的'},
     {type:'video',name:'视频',url:'assets/images/blog-picture-dabiaoge/video.jpg',introduce:'分享一些我觉得有意思的小视频'},
-    {type:'other',name:'其他',url:'assets/images/blog-picture-dabiaoge/3dDemo.jpg',introduce:'施工区,还没想好干啥使'}
+    {type:'map',name:'地图',url:'assets/images/blog-picture-dabiaoge/3dDemo.jpg',introduce:'施工区,还没想好干啥使'}
   ];
   return (
     <div className='mainContent'>

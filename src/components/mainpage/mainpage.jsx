@@ -1,40 +1,25 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import './mainpage.less';
 import {Link,Outlet,useNavigate} from 'react-router-dom';
 import {Popover} from "antd";
 import DragBox from "./backpre/index"
+import UserManager from "../usermanager"
+import $request from "../../utils/request"
 
 export default function Mainpage() {
-  
+  const [visit,setVisit] =useState({});
   const visitor = true;
   const navigate = useNavigate()
-  const userinfo = ()=>{
-    return (
-      <div>
-        <div style={{textAlign:'center'}}>{userInfo.name}</div>
-        {
-          userInfo.type=="admin"?
-          <div style={{marginTop:'4px'}}>
-            <button>页面管理</button>
-            </div>
-            :''
-        }
-
-      </div>
-    )
+  const loadVisitDate = ()=>{
+    $request("/visit/getvisitnum").then(res=>{
+      setVisit(res);
+    })
   }
-  const todayNum=10;
-  const totalNum=200;
-  const  userInfo={
-     type:'admin',
-     name:'龅牙',
-     icon:'assets/images/blog-picture-dabiaoge/visitoricon.png'
-  } 
   const menuType =[
                   {type:'article',name:'博文'},
                   {type:'picture',name:'图片'},
                   {type:'video',name:'视频'},
-                  {type:'other',name:'其他'}];
+                  {type:'map',name:'地图'}];
   const backtoindex=()=>{
     navigate('./index')
 
@@ -43,10 +28,12 @@ export default function Mainpage() {
     //让其每次跳转完滚轮都回到顶部
     window.scrollTo(0,0)
     console.log('....zhixingle')
+    loadVisitDate();
+
     return ()=>{
       console.log(886)
     }
-  })
+  },[])
   const backToTop =()=>{
     window.scrollTo(0,0);
   }
@@ -69,14 +56,7 @@ export default function Mainpage() {
         </div>
         <div className='headerRight'>
         <div className='userForm'>
-          <div className='user'>
-            <Popover content={userinfo}>
-              <div className='userIcon'>
-                <img src={require(`../../${userInfo.icon}`)} style={{width:'100%',height:'100%',borderRadius:"50%"}}></img>
-              </div>
-            </Popover>
-
-          </div>
+          <UserManager></UserManager>
         </div>
         </div>   
       </div>
@@ -93,8 +73,8 @@ export default function Mainpage() {
       <br></br>
       <span>otherBlog:<a href='https://juejin.cn/user/2630507106147517' target={'_blank'}>https://juejin.cn/user/2630507106147517</a></span>
       <div className='visitNum'>
-        <div>当日访问次数:<span>{todayNum}</span></div>
-        <div>总访问次数:<span>{totalNum}</span></div>
+        <div>当日访问次数:<span>{visit.todayVisit}</span></div>
+        <div>总访问次数:<span>{visit.totalVisit}</span></div>
       </div>
     </div>
     </div>
