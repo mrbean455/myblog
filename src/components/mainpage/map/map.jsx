@@ -10,8 +10,7 @@ import tileMap from  "../../../assets/dbgmap/dbg2map_225773205_256X256_PNG.mbtil
 //引入MBtiles库
 // import "sql.js"
 // import '@supermap/iclient-leaflet';
-// require("leaflet-tilelayer-mbtiles")
-require("sql.js")
+//  import "leaflet-tilelayer-mbtiles";
 export default function Map() {
   const [map,setMap] =useState({})
 
