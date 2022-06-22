@@ -18,8 +18,7 @@ export default function Mainpage() {
   const menuType =[
                   {type:'article',name:'博文'},
                   {type:'picture',name:'图片'},
-                  {type:'video',name:'视频'},
-                  {type:'map',name:'地图'}];
+                  {type:'video',name:'视频'}];
   const backtoindex=()=>{
     navigate('./index')
 
@@ -34,9 +33,6 @@ export default function Mainpage() {
       console.log(886)
     }
   },[])
-  const backToTop =()=>{
-    window.scrollTo(0,0);
-  }
   return (
     <div style={{minHeight:'720px'}}>
       <div className='header'>
@@ -52,6 +48,7 @@ export default function Mainpage() {
                 </div>
             })
           }
+          <div><a href='http://localhost:3001' style={{cusor:"pointer"}} target="_blank">地图</a></div>
         </div>
         </div>
         <div className='headerRight'>
