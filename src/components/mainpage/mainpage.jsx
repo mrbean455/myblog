@@ -48,7 +48,7 @@ export default function Mainpage() {
                 </div>
             })
           }
-          <div><a href='http://localhost:3001' style={{cusor:"pointer"}} target="_blank">地图</a></div>
+          <div><a href='http://120.53.107.234:3001' style={{cusor:"pointer"}} target="_blank">地图</a></div>
         </div>
         </div>
         <div className='headerRight'>
