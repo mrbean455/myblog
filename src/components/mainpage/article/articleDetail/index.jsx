@@ -1,8 +1,9 @@
-import React ,{useState}from 'react'
+import React ,{useState,useEffect}from 'react'
 import './index.less'
 import { useNavigate , useParams } from 'react-router-dom'
 import { ClockCircleTwoTone, LikeTwoTone  ,EyeTwoTone} from '@ant-design/icons';
 import DragBox from "../../backpre/index"
+import ContentComp from "./contentComp/index"
 import $request from "../../../../utils/request"
 export default function Index(props) {
   const [likeFlag ,setLikeFlag] = useState(false);
@@ -15,10 +16,9 @@ export default function Index(props) {
       setArticleDetail(res);
     })
   }
-  useState(()=>{
+  useEffect(()=>{
    loadArticleData(params.id);
-
-  })
+  },[])
   const addLike= async (id)=>{
     let count =articleDetail.articleLike;
     console.log('点攒')
@@ -45,7 +45,7 @@ export default function Index(props) {
       </div>
       <div className='articleDetailIntroduce'><span style={{fontSize:"24px",color:"#424244"}}>简介：</span>{articleDetail.introduce}</div>
       <div className='articleDetailContent'>
-        <span>{articleDetail.content}</span>
+        <ContentComp content={articleDetail.content}></ContentComp>
       </div>
     </div>
     <DragBox type={'left'} btnClick={'1'}></DragBox>

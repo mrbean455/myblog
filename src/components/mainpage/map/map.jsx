@@ -4,13 +4,6 @@ import React,{useState,useEffect} from 'react'
 import L from "leaflet";
 import "../../../../node_modules/leaflet/dist/leaflet.css";
 import "./map.less";
-
-import tileMap from  "../../../assets/dbgmap/dbg2map_225773205_256X256_PNG.mbtiles";
-
-//引入MBtiles库
-// import "sql.js"
-// import '@supermap/iclient-leaflet';
-//  import "leaflet-tilelayer-mbtiles";
 export default function Map() {
   const [map,setMap] =useState({})
 
@@ -25,7 +18,7 @@ export default function Map() {
       zoomControl:true,//+,-按钮
       attributionControl:false,//右下角leaflet标识
   })
-  L.tileLayer.mbTiles(tileMap).addTo(map);
+  // L.tileLayer.mbTiles(tileMap).addTo(map);
   L.marker([0.0116046894120897,0.0116046894120897]).addTo(map);
   map.setView([0.0116046894120897,0.0116046894120897],16)
     //  let map = L.map("myMap", {
