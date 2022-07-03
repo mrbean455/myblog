@@ -9,10 +9,8 @@ export default function Index(props) {
   const [likeFlag ,setLikeFlag] = useState(false);
   const [articleDetail,setArticleDetail]=useState({})
   const params =useParams();
-
   const loadArticleData =async (id,first=true)=>{
   await  $request(`article/getarticledetail?id=${id}&first=${first}`).then(res=>{
-      console.log(res,'detil')
       setArticleDetail(res);
     })
   }
@@ -21,7 +19,6 @@ export default function Index(props) {
   },[])
   const addLike= async (id)=>{
     let count =articleDetail.articleLike;
-    console.log('点攒')
     if(likeFlag){
       //已经点过了，再点就取消点赞
       count = count-1;
@@ -29,12 +26,11 @@ export default function Index(props) {
     }else{
       count = count+1;
     }
-    console.log(count,'count');
    await $request(`/article/addarticlelike?id=${id}&like=${count}`)
     setLikeFlag(!likeFlag)
     loadArticleData(id,false);
   }
-  return (
+  return(
     <div  style={{background:'#1f1d1d',width:"100%",overflow:"auto"}}>
     <div className='articleDetail'>
       <h1 className='articleDetailTitle'>{articleDetail.articleName}</h1>
@@ -45,7 +41,10 @@ export default function Index(props) {
       </div>
       <div className='articleDetailIntroduce'><span style={{fontSize:"24px",color:"#424244"}}>简介：</span>{articleDetail.introduce}</div>
       <div className='articleDetailContent'>
-        <ContentComp content={articleDetail.content}></ContentComp>
+        {
+        JSON.stringify(articleDetail)=='{}'?"":<ContentComp content={articleDetail.content} paragraphOrder={articleDetail.paragraphArr}></ContentComp>
+        }
+
       </div>
     </div>
     <DragBox type={'left'} btnClick={'1'}></DragBox>
