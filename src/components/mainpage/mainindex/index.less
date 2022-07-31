@@ -20,19 +20,37 @@
 }
 .mainContent {
     width: 100%;
+    position: relative;
     background-color: #1f1d1d;
-    .introduce {
+    .classicDialogue {
         width: 100%;
         height: 400px;
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(233, 235, 235);
+        .dialogueContent{
+                width: 40%;
+                font-size:30px;
+                overflow: hidden;
+        }
+        .dialogueInfo{
+            width: 40%;
+            text-align: right;
+            font-size:26px;
+        }
+    }
+    .commonPicture{
         background-image: url("../../../assets/images/blog-picture-dabiaoge/indexintroduce.png");
         background-size: 100%;
         background-position: 0% 71%;//x,y轴偏移参数值
-        text-align: center;
-
-        span {
-            font-size: 26px;
-            color: rgb(183, 181, 181);
-        }
+    }
+    .jieqi24Picture{
+        background-position: 0px 88%;
+        color: #fda240;
     }
 
     .typeForm{

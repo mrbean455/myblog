@@ -27,7 +27,7 @@ export default function PageHeader(props){
       })
 
 return(
-    <div className='pictureheader' ref={pictureHeaderRef} style={{backgroundImage:`url(${require(`../../${img}`)})`}}>
+    <div className='pictureheader' ref={pictureHeaderRef} style={{backgroundImage:`url(${require(`../../${img}`)})`,backgroundRepeat:"no-repeat"}}>
     <span>{title}</span>
     </div>
 )

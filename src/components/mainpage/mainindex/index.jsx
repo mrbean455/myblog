@@ -1,14 +1,38 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import "./index.less"
 import {useNavigate} from "react-router-dom";
+import $request from "../../../utils/request"
 
 
 export default function Index() {
+  const dialogueRef = React.useRef(null);
   const navigate = useNavigate();
+  const [curDayDialogue,setCurDayDialogue] = useState({});
+
+  useEffect(()=>{
+    loadEveryDayDialogue();
+  },[])
+
+  const loadEveryDayDialogue=()=>{
+     $request('/dialogue/getcurrentdialogue').then(res=>{
+      console.log(res);
+      setCurDayDialogue(res);
+      if(res.bgUrl!=null){
+        load24jieqiPicture(res.bgUrl);
+      }
+     })
+  }
+
+  const load24jieqiPicture=(url)=>{
+    let elStlye = dialogueRef.current.style;
+    elStlye.backgroundImage = `url(${url})`;
+  }
 
   const gotoPage = (type)=>{
     navigate(`/mainpage/${type}`);
   }
+
+
   const menuType =[
     {type:'article',name:'博文',url:'assets/images/blog-picture-dabiaoge/article.jpg',introduce:'分享关于我自己写的一些技术博客或者解决方法心得'},
     {type:'picture',name:'图片',url:'assets/images/blog-picture-dabiaoge/picture.jpg',introduce:'分享一些我觉得美的照片,有自己拍的和他人拍摄的'},
@@ -17,18 +41,9 @@ export default function Index() {
   ];
   return (
     <div className='mainContent'>
-      <div className='introduce'>
-        <span style={{fontSize:'36px'}}>WELCOME!!!</span>
-        <br></br>
-        <span>这是我的个人博客，或者说我更倾向于称其为我的个人兴趣。</span>
-        <br></br>
-        <span>1.0版本主要是分为三大模块也可以说是网站的内容，分享我对编程的心得、分享一些符合我个人审美的</span>
-        <br></br>
-        <span>一些自己的或者他人的照片、一些自己拍的小视频,后期（如果够闲）会随着技术的进步可能会</span>
-        <br></br>
-        <span>发布一些自己觉得有意思的小demo。最后,版本的更新维护迭代啥的,随缘哈哈哈。</span>
-        <br></br>
-        <span>该网站的代码会上传到我的github上</span>
+      <div  className={`classicDialogue ${curDayDialogue.bgUrl==null||curDayDialogue.bgUrl.length==0?'commonPicture':'jieqi24Picture'}`} ref={dialogueRef}>
+        <div className='dialogueContent'>{curDayDialogue.content}</div>
+        <div className='dialogueInfo'><span>——{curDayDialogue.name}</span></div>
       </div>
       <div className='typeForm'>
         {

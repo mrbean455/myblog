@@ -5,10 +5,8 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
-    "@supermap/iclient-leaflet": "^11.0.0-beta",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.16.4",
-    "@types/sql.js": "^1.4.3",
     "antd": "^4.19.5",
     "axios": "^0.27.2",
     "babel-jest": "^27.4.2",
@@ -34,7 +32,6 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
-    "leaflet": "^1.8.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.4.5",

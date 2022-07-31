@@ -106,3 +106,52 @@
         }
     }
 }
+.noticeBg{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #131113da;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .noticeContent{
+        position: relative;
+        padding: 15px;
+        width: 64vh;
+        height: 82vh;
+        background: #2b2a2a;
+        color: rgb(125, 129, 133);
+        .mainContent{
+            height: 90%;
+            background: #2b2a2a;
+            overflow-y: scroll;         
+        }
+        ::-webkit-scrollbar {
+            width: 2px; /* 竖向滚动条宽度 */
+            height: 6px; /* 横向滚动条高度 */
+          }
+        .noticeFunc{
+            position: absolute;
+            width: 100%;
+            bottom: 20px;
+            .closeNotice{
+                margin: 0 auto;
+                display: block;
+                height: 30px;
+                width: 60px;
+                font-weight: 600;
+                line-height: 26px;
+                font-size: 18px;
+                background: #a8a3a3;
+                border: 0.5px solid #a8a3a3;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+            .closeNotice:hover{
+                color:#ddd9d9 ;
+                box-shadow: 1px -1px 2px #bbb8b8;
+            }
+        }
+    }
+}
