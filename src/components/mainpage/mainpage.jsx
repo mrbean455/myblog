@@ -104,6 +104,8 @@ export default function Mainpage() {
       <span>Github:<a href='https://github.com/mrbean455' target={'_blank'}>https://github.com/mrbean455</a></span>
       <br></br>
       <span>otherBlog:<a href='https://juejin.cn/user/2630507106147517' target={'_blank'}>https://juejin.cn/user/2630507106147517</a></span>
+      <br></br>
+      <a style={{color:'#fff'}} href='https://beian.miit.gov.cn' target={'_blank'}>蜀ICP备2022017496号-1</a>
       <div className='visitNum'>
         <div>当日访问次数:<span>{visit.todayVisit}</span></div>
         <div>总访问次数:<span>{visit.totalVisit}</span></div>

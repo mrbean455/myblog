@@ -159,6 +159,7 @@ const  Login=(props) =>{
 
       </div>
       </div>
+      <a className='loginBottom' style={{color:'#fff'}} href='https://beian.miit.gov.cn' target={'_blank'}>蜀ICP备2022017496号-1</a>
     </div>
   )
 }
